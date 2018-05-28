@@ -4,8 +4,8 @@ mysql_connect('den1.mysql2.gear.host:3306','senews','senews.password');
 mysql_select_db('senews');
 
 function addNews($title, $content, $image, $link, $source, $sourceicon, $category) {
-  $title = mysql_real_escape_string($title);
-  $content = mysql_real_escape_string($content);
+  $title = mysql_real_escape_string(htmlspecialchars($title));
+  $content = mysql_real_escape_string(htmlspecialchars($content));
   $image = mysql_real_escape_string($image);
   $link = mysql_real_escape_string($link);
   $source = mysql_real_escape_string($source);

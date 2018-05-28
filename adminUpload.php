@@ -8,7 +8,6 @@
   session_start();
   mysql_connect('den1.mysql2.gear.host:3306','senews','senews.password');
   mysql_select_db('senews');
-  echo($_POST['password']);
   if (isset($_POST['password'])) {
     if ($_POST['password'] == '1234qazwsxedc') {
       $image = $_POST["imagelink"];
