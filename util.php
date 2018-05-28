@@ -53,6 +53,9 @@ function getNewsHtml($array) {
   </article>";
   foreach ($array as $key => $value) {
     $article = $articleTemplate;
+    foreach ($value as $key1 => $value1) {
+      $value[$key1] = stripcslashes($value1);
+    }
     $article = str_replace("replace_title", $value['title'], $article);
     $article = str_replace("replace_content", $value['content'], $article);
     $article = str_replace("replace_source_icon", $value['sourceicon'], $article);
